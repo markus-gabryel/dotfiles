@@ -1,0 +1,86 @@
+; black = #000000
+; white = #f9f9f9
+; gray = #343434
+; yellow = #dddd13
+; red = #e92f2f
+; cyan = #23edda
+
+; ---------------------------------------
+
+[bar/mybar]
+
+monitor = DisplayPort-0
+
+modules-left = bspwm
+modules-center =  date
+modules-right = pulseaudio mic
+
+height = 25
+background = #000000
+
+font-0 = "Hack Nerd Font Mono:size=11;2"
+
+; ---------------------------------------
+
+[module/bspwm]
+type = internal/bspwm
+
+pin-workspaces = false
+
+label-focused = %name%
+label-focused-padding = 1
+label-focused-foreground = #000000
+label-focused-background = #f9f9f9
+
+label-occupied = %name%
+label-occupied-padding = 1
+label-occupied-foreground = #f9f9f9
+
+label-empty = %name%
+label-empty-padding = 1
+label-empty-foreground = #343434
+
+label-dimmed = %name%
+label-dimmed-padding = 1
+label-dimmed-focused-foreground = #dddd13
+label-dimmed-focused-background = #000000
+
+label-urgent = %name%
+label-urgent-padding = 1
+label-urgent-background = #e92f2f
+
+; ---------------------------------------
+
+[module/date]
+type = internal/date
+
+date = %a %d %b
+time = %I:%M %p
+
+label = %date%, %time%
+label-padding = 1
+
+; ---------------------------------------
+
+[module/pulseaudio]
+type = internal/pulseaudio
+
+use-ui-max = false
+format-volume = <ramp-volume> <label-volume>
+label-muted = 婢 off
+
+ramp-volume-0 = ﱝ
+ramp-volume-1 = 奔
+ramp-volume-2 = 墳
+
+; ---------------------------------------
+
+[module/mic]
+type = custom/script
+
+interval = 0
+label-padding = 2
+
+exec = ~/.config/polybar/mic.sh
+click-left = ~/.config/polybar/mic.sh -
+

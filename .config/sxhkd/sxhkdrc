@@ -1,0 +1,44 @@
+# Reload config
+super + {_,shift + }Escape
+	{pkill -USR1 -x sxhkd,bspc wm -r}
+
+# Go terminal
+super + Return
+	alacritty
+
+# Internet browser
+super + w
+	brave-browser
+
+# Show dmenu
+super + space
+	dmenu_run -b -fn 'Hack Nerd Font Mono' -nb '#000' -sb '#fff' -sf '#000'
+
+# Screenshot
+Print
+	flameshot gui
+
+# Toggle microphone
+super + c
+	amixer -q -D pulse sset Capture toggle
+
+# Focus/swap windows
+super + {_,shift + }{h,j,k,l}
+	bspc node -{f,s} {west,south,north,east}
+
+# Resize windows
+super + alt + {h,j,k,l}
+	bspc node -z {right -20 0,bottom 0 20,bottom 0 -20,right 20 0}
+
+# Close window/bspwm
+super + {_,shift + }q
+	bspc {node -c,quit}
+
+# Focus/send to desktop
+super + {_,shift + }{1-4,7-9,0}
+	bspc {desktop -f,node -d} '^{1-4,5-7,8}'
+
+# Set window state
+super + {t,f}
+	bspc node -t {tiled,fullscreen}
+

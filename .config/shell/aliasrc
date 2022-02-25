@@ -1,0 +1,34 @@
+# Programs
+alias ls=exa
+alias l='exa -la'
+alias ll='exa -l'
+alias la='exa -a'
+alias vi=nvim
+alias pmx=pulsemixer
+alias sudo='sudo '
+alias cali='khal interactive'
+alias purge='apt purge --autoremove'
+
+# Git
+alias g='git'
+alias gin='git init'
+alias gcl='git clone'
+alias gd='git diff'
+alias gst='git status'
+alias gss='git status -s'
+alias ga='git add'
+alias gc='git commit'
+alias gca='git commit --amend'
+alias gcan='git commit --amend --no-edit'
+alias gb='git branch'
+alias gba='git branch --all'
+alias gco='git checkout'
+alias gcb='git checkout -b'
+alias gcm='git checkout master || git checkout main'
+alias grh='git reset HEAD'
+alias grhh='git reset HEAD --hard'
+alias gm='git merge'
+alias gl='git pull'
+alias ggl='git pull origin $(git branch --show-current)'
+alias gp='git push -u'
+alias ggp='git push -u origin $(git branch --show-current)'
