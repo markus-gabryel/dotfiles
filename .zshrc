@@ -10,9 +10,6 @@ HISTSIZE=10000000
 SAVEHIST=10000000
 HISTFILE=~/.cache/zsh/history
 
-# Compdump in cache directory:
-compinit -d ~/.cache/zsh/zcompdump-$ZSH_VERSION
-
 # Load aliases and shortcuts if existent.
 [ -f "${XDG_CONFIG_HOME:-$HOME/.config}/shell/shortcutrc" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/shell/shortcutrc"
 [ -f "${XDG_CONFIG_HOME:-$HOME/.config}/shell/aliasrc" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/shell/aliasrc"
@@ -22,7 +19,7 @@ compinit -d ~/.cache/zsh/zcompdump-$ZSH_VERSION
 autoload -U compinit
 zstyle ':completion:*' menu select
 zmodload zsh/complist
-compinit
+compinit -d ~/.cache/zsh/zcompdump-$ZSH_VERSION
 _comp_options+=(globdots)		# Include hidden files.
 
 # vi mode

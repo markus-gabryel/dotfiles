@@ -10,4 +10,6 @@ My basic dot files ~~stolen from the internet~~
 - Bar: Polybar
 - Shell: Zsh
 - Editor: Neovim
-- Image Viewer: sxiv
+- Image viewer: sxiv
+- File manager: fff
+
