@@ -1,0 +1,13 @@
+#!/bin/sh
+SHUTDOWN='襤 shutdown'
+REBOOT='ﰇ reboot'
+QUIT=' quit'
+
+OPT="$(echo "$SHUTDOWN\n$REBOOT\n$QUIT" | dmenu)"
+
+case "$OPT" in
+	"$SHUTDOWN") shutdown -h now ;;
+	"$REBOOT") shutdown -r now ;;
+	"$QUIT") bspc quit ;;
+esac
+

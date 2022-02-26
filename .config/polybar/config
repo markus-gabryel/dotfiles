@@ -1,7 +1,6 @@
 ; black = #000000
 ; white = #f9f9f9
 ; gray = #343434
-; yellow = #dddd13
 ; red = #e92f2f
 ; cyan = #23edda
 
@@ -42,8 +41,8 @@ label-empty-foreground = #343434
 
 label-dimmed = %name%
 label-dimmed-padding = 1
-label-dimmed-focused-foreground = #dddd13
-label-dimmed-focused-background = #000000
+label-dimmed-focused-foreground = #f9f9f9
+label-dimmed-focused-background = #343434
 
 label-urgent = %name%
 label-urgent-padding = 1

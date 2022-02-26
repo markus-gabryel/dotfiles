@@ -37,5 +37,5 @@ map <Tab> :Buffers<CR>
 map <c-f> :Files<CR>
 map <c-o> :Files ~<CR>
 
-let g:fzf_preview_window = []
+let g:fzf_preview_window = ['up:40%:hidden', 'ctrl-/']
 

@@ -4,10 +4,10 @@ alias l='exa -la'
 alias ll='exa -l'
 alias la='exa -a'
 alias vi=nvim
-alias pmx=pulsemixer
 alias sudo='sudo '
 alias cali='khal interactive'
 alias purge='apt purge --autoremove'
+alias clipo='xclip -sel c -o'
 
 # Git
 alias g='git'

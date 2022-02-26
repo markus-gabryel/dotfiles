@@ -1,0 +1,3 @@
+#!/bin/sh
+PKG=`adb shell pm list packages | fzf` || exit 1
+adb shell pm uninstall -k --user 0 "${PKG##*:}"
