@@ -1,6 +1,8 @@
 # dotfiles
 
-My basic dot files ~~stolen from the internet~~
+My simple dot files ~~stolen from the internet~~
+
+![](screenshot.png)
 
 ## Software
 
