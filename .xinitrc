@@ -4,7 +4,7 @@ xrandr --output HDMI-A-0 --mode 1280x720 --pos 0x0 --primary \
 xwallpaper \
 	--output HDMI-A-0 --zoom ~/Pictures/Walls/cathedral.jpeg \
 	--output DisplayPort-0 --zoom ~/Pictures/Walls/kazan-cathedral.jpg
-
+xrdb ~/.Xresources
 xsetroot -cursor_name left_ptr
 
 # No screen saving
