@@ -1,0 +1,15 @@
+#!/bin/sh
+
+INSTANCE='https://translate.bus-hit.me'
+ENGINE=google
+SOURCE="${3:-auto}"
+TARGET="${2:-en}"
+TEXT="$1"
+
+[ -z "$TEXT" -o "$TEXT" = - ] && read TEXT || exit 1
+
+URL="$INSTANCE/?engine=$ENGINE&text=$TEXT&sl=$SOURCE&tl=$TARGET"
+
+wget -q "$URL" -O - |\
+	sed -r '/<textarea class="translation/!d ; s/.*<.*>(.*)<.*>.*/\1/' |\
+	perl -MHTML::Entities -pe 'decode_entities($_);'

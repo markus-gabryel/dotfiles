@@ -26,14 +26,16 @@ inoremap ? ?<C-g>u
 nnoremap n nzzzv
 nnoremap N Nzzzv
 nnoremap J mzJ`z
+nnoremap S :%s//g<left><left>
+vnoremap S :s//g<left><left>
 map Y y$
 map Q gq<space>
-map S :%s//g<left><left>
 map ,<space> :nohlsearch<CR>
 map <F2> :source ~/.config/nvim/init.vim<CR>
-map <F3> :!chmod +x % && ./%<CR>
-map <M-c> :ColorToggle<CR>
-map <Tab> :Buffers<CR>
+map <F3> :make<CR>
+map <F6> :!chmod +x % && ./%<CR>
+map <F10> :ColorToggle<CR>
+map <c-b> :Buffers<CR>
 map <c-f> :Files<CR>
 map <c-o> :Files ~<CR>
 

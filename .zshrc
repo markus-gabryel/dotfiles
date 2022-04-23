@@ -64,8 +64,6 @@ bindkey -s '^o' 'ffzf\n'
 
 bindkey -s '^a' 'bc -lq\n'
 
-bindkey -s '^p' 'pulsemixer\n'
-
 bindkey -s '^r' 'source ~/.zshrc\n'
 
 bindkey '^[[P' delete-char

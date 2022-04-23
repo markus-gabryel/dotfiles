@@ -22,13 +22,18 @@ Print
 Pause
 	powermenu
 
-# Toggle microphone
-super + c
-	amixer -q -D pulse sset Capture toggle
+# Toggle microphone / show mixer
+super + {_,shift + }c
+	{amixer -q -D pulse sset Capture toggle,\
+	st -c float-term -e pulsemixer}
+
+# Toggle bar
+super + b
+	bspc config bottom_padding 0 ; polybar-msg cmd toggle
 
 # Focus side windows/desktops
 super + {h,j,k,l}
-	bspc node -f {west || bspc desktop -f weast:focused,\
+	bspc node -f {west || bspc desktop -f west:focused,\
 				  south || bspc desktop -f south:focused,\
 				  north || bspc desktop -f north:focused,\
 				  east || bspc desktop -f east:focused}
@@ -45,19 +50,19 @@ super + ctrl + {h,j,k,l}
 	bspc node -d {west,south,north,east}:focused --follow
 
 # Focus/send to desktop
-super + {_,shift + }{1-3,8-9,0}
-	bspc {desktop -f,node -d} '^{1-3,4-5,6}'
+super + {_,shift + }{1,2,3,8,9,0}
+	bspc {desktop -f,node -d} '^{1,2,3,4,5,6}'
 
 # Resize windows
 super + alt + {h,j,k,l}
-	bspc node -z {left -20 0 || bspc node -z right 20 0,\
-				  top 0 -20 || bspc node -z bottom 0 20,\
-				  top 0 20 || bspc node -z bottom 0 -20,\
-				  left 20 0 || bspc node -z right -20 0}
+	bspc node -z {left -20 0 || bspc node -z right -20 0,\
+				  top 0 20 || bspc node -z bottom 0 20,\
+				  top 0 -20 || bspc node -z bottom 0 -20,\
+				  left 20 0 || bspc node -z right 20 0}
 
 # Set window state
-super + {t,f}
-	bspc node -t {tiled,fullscreen}
+super + {t,f,s}
+	bspc node -t {tiled,fullscreen,floating}
 
 # Close/kill window
 super + {_,shift + }q

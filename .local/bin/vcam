@@ -1,0 +1,9 @@
+#!/bin/sh
+
+LABEL='Virtual Camera'
+DEV_N=1
+
+[ -e /dev/video$DEV_N ] && sudo rmmod v4l2loopback
+sudo modprobe v4l2loopback video_nr=$DEV_N exclusive_caps=1 card_label="$LABEL"
+sudo v4l2-ctl -d$DEV_N -D
+scrcpy --no-display --turn-screen-off --v4l2-sink=/dev/video$DEV_N

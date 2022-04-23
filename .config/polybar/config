@@ -1,23 +1,20 @@
-; black = #000000
-; white = #f9f9f9
-; gray = #343434
-; red = #e92f2f
-; cyan = #23edda
-
-; ---------------------------------------
-
 [bar/mybar]
 
-monitor = DisplayPort-0
+monitor = HDMI-A-0
+bottom = true
+enable-ipc = true
 
 modules-left = bspwm
-modules-center =  date
-modules-right = pulseaudio mic
+modules-right = network pulseaudio mic xkeyboard date
 
-height = 25
+height = 20
+foreground = #f9f9f9
 background = #000000
 
-font-0 = "Hack Nerd Font Mono:size=11;2"
+line-size = 2
+
+font-0 = Hack:pixelsize=11;2
+font-1 = "Hack Nerd Font:pixelsize=11;2"
 
 ; ---------------------------------------
 
@@ -28,12 +25,12 @@ pin-workspaces = false
 
 label-focused = %name%
 label-focused-padding = 1
-label-focused-foreground = #000000
-label-focused-background = #f9f9f9
+label-focused-foreground = #f9f9f9
+label-focused-underline = #f9f9f9
 
 label-occupied = %name%
 label-occupied-padding = 1
-label-occupied-foreground = #f9f9f9
+label-occupied-foreground = #ababab
 
 label-empty = %name%
 label-empty-padding = 1
@@ -42,22 +39,42 @@ label-empty-foreground = #343434
 label-dimmed = %name%
 label-dimmed-padding = 1
 label-dimmed-focused-foreground = #f9f9f9
-label-dimmed-focused-background = #343434
+label-dimmed-focused-underline = #343434
 
 label-urgent = %name%
 label-urgent-padding = 1
-label-urgent-background = #e92f2f
+label-urgent-foreground = #e92f2f
+
+; ---------------------------------------
+
+[module/xkeyboard]
+type = internal/xkeyboard
+
+label-layout = " [%layout%%number%] "
+
+blacklist-0 = num lock
+blacklist-1 = scroll lock
 
 ; ---------------------------------------
 
 [module/date]
 type = internal/date
 
-date = %a %d %b
+date = %a, %b %d
 time = %I:%M %p
 
-label = %date%, %time%
-label-padding = 1
+label = " %time%  %date% "
+
+; ---------------------------------------
+
+[module/network]
+type = internal/network
+
+interface = wlx001a3fc4ac83
+interval = 0.5
+
+label-connected = " ﰬ %downspeed%  ﰵ %upspeed% "
+label-disconnected = "  "
 
 ; ---------------------------------------
 
@@ -65,12 +82,12 @@ label-padding = 1
 type = internal/pulseaudio
 
 use-ui-max = false
-format-volume = <ramp-volume> <label-volume>
-label-muted = 婢 off
+format-volume = " <ramp-volume> <label-volume> "
+label-muted = " 婢 off "
 
-ramp-volume-0 = ﱝ
-ramp-volume-1 = 奔
-ramp-volume-2 = 墳
+ramp-volume-0 = " 奄"
+ramp-volume-1 = " 奔"
+ramp-volume-2 = " 墳"
 
 ; ---------------------------------------
 
@@ -78,7 +95,7 @@ ramp-volume-2 = 墳
 type = custom/script
 
 interval = 0
-label-padding = 2
+label = " %output% "
 
 exec = ~/.config/polybar/mic.sh
 click-left = ~/.config/polybar/mic.sh -

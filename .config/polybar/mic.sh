@@ -1,6 +1,6 @@
 #!/bin/sh
-ON=
-OFF=
+ON=
+OFF=
 
 [ "$1" = '-' ] && amixer -q -D pulse sset Capture toggle
 

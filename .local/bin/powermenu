@@ -1,4 +1,5 @@
 #!/bin/sh
+
 SHUTDOWN='襤 shutdown'
 REBOOT='ﰇ reboot'
 QUIT=' quit'
@@ -10,4 +11,3 @@ case "$OPT" in
 	"$REBOOT") shutdown -r now ;;
 	"$QUIT") bspc quit ;;
 esac
-
