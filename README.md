@@ -1,19 +1,18 @@
 # dotfiles
 
-My simple dot files ~~stolen from the internet~~
+My simple dot files ~stolen from the internet~
 
 ![](screenshot.png)
 
 ## Software
 
-- Terminal: st (Luke Smith)
-- Window manager: bspwm
-- Hotkey daemon: sxhkd
+- Terminal: [st](https://github.com/markus-gabryel/st)
+- Window manager: [dwm](https://github.com/markus-gabryel/dwm)
 - Compositor: picom
-- Bar: Polybar
-- Shell: Zsh
-- Editor: Neovim
+- Shell: zsh
+- Editor: neovim
+- PrintScreen: flameshot
 - Image viewer: sxiv
 - File manager: fff
-- Launcher: dmenu (my fork)
+- Launcher: [dmenu](https://tools.suckless.org/dmenu)
 
