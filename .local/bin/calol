@@ -1,0 +1,4 @@
+#!/bin/sh
+DAY=`date +%e`
+WEEK=$((`date +%U`+1))
+echo "$(ncal -hwb $@ | sed "s/\($WEEK|.*\)\($DAY\)/\1\\\e[7;37;1m\2\\\e[0m/")" | lolcat -t

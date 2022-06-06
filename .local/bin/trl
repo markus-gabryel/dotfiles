@@ -1,5 +1,4 @@
 #!/bin/sh
-
 INSTANCE='https://translate.bus-hit.me'
 ENGINE=google
 SOURCE="${3:-auto}"

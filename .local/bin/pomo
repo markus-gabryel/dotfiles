@@ -1,0 +1,9 @@
+#!/bin/sh
+INPUT="${1:-00:05:00}"
+DURATION=`date -ud "1970-01-01T${INPUT}" "+%s"`
+TARGET=$(( `date +%s` + $DURATION ))
+
+while [ $TARGET -gt `date +%s` ]; do
+	REMAIND=$(( $TARGET - `date +%s` ))
+	echo -n "`date -ud @$REMAIND +%H:%M:%S`\r"
+done

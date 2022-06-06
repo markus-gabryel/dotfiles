@@ -1,13 +1,14 @@
 #!/bin/sh
+SHUTDOWN='shutdown'
+REBOOT='reboot'
+QUIT='quit'
+LOGOUT='logout'
 
-SHUTDOWN='襤 shutdown'
-REBOOT='ﰇ reboot'
-QUIT=' quit'
+OPTION="$(echo "$SHUTDOWN\n$REBOOT\n$QUIT\n$LOGOUT" | dmenu -p "`uptime -p`" $@)"
 
-OPT="$(echo "$SHUTDOWN\n$REBOOT\n$QUIT" | dmenu)"
-
-case "$OPT" in
-	"$SHUTDOWN") shutdown -h now ;;
-	"$REBOOT") shutdown -r now ;;
-	"$QUIT") bspc quit ;;
+case "$OPTION" in
+	"$SHUTDOWN") poweroff ;;
+	"$REBOOT") reboot ;;
+	"$QUIT") killall dwm ;;
+	"$LOGOUT") pkill -KILL -u $USER ;;
 esac
