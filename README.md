@@ -14,5 +14,5 @@ My simple dot files ~stolen from the internet~
 - PrintScreen: flameshot
 - Image viewer: sxiv
 - File manager: fff
-- Launcher: [dmenu](https://tools.suckless.org/dmenu)
+- Launcher: [dmenu](https://github.com/markus-gabryel/dmenu)
 
