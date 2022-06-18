@@ -1,5 +1,5 @@
 #!/bin/sh
-EMOJI=`dmenu -p '😉👌' -l 30` << EOF
+EMOJI=`dmenu -p '😉👌' -l 30 $@` << EOF
 😀 grinning face
 😃 grinning face with big eyes
 😄 grinning face with smiling eyes
@@ -1631,4 +1631,4 @@ EMOJI=`dmenu -p '😉👌' -l 30` << EOF
 🏴󠁧󠁢󠁳󠁣󠁴󠁿 flag: Scotland
 🏴󠁧󠁢󠁷󠁬󠁳󠁿 flag: Wales
 EOF
-[ -n "$EMOJI" ] && echo "${EMOJI%% *}" | xclip -sel c || exit 1
+[ -n "$EMOJI" ] && echo -n "${EMOJI%% *}" | xclip -sel c || exit 1

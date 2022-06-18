@@ -10,10 +10,50 @@ HISTSIZE=10000000
 SAVEHIST=10000000
 HISTFILE=~/.cache/zsh/history
 
-# Load aliases and shortcuts if existent.
-[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/shell/shortcutrc" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/shell/shortcutrc"
-[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/shell/aliasrc" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/shell/aliasrc"
-[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/shell/zshnameddirrc" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/shell/zshnameddirrc"
+# General aliases:
+alias \
+	ls=exa \
+	l='exa -la' \
+	ll='exa -l' \
+	la='exa -a' \
+	vi=nvim \
+	sudo='sudo ' \
+	yank='xclip -sel c -o' \
+	get='sudo apt install' \
+	with='apt search' \
+	purge='sudo apt purge --autoremove' \
+	bc='bc -ql' \
+	ip='ip -color=auto' \
+	diff='diff --color=auto' \
+	yd='yt-dlp' \
+	zt='zathura' \
+	g='git' \
+	gin='git init' \
+	gcl='git clone' \
+	gd='git diff' \
+	gst='git status' \
+	gss='git status -s' \
+	ga='git add' \
+	gc='git commit' \
+	gca='git commit --amend' \
+	gcan='git commit --amend --no-edit' \
+	glo='git log' \
+	glg='git log --graph' \
+	gr='git remote' \
+	gb='git branch' \
+	gba='git branch --all' \
+	gco='git checkout' \
+	gcb='git checkout -b' \
+	gcm='git checkout master || git checkout main' \
+	grs='git restore' \
+	grss='git restore --staged' \
+	grh='git reset HEAD' \
+	grhh='git reset HEAD --hard' \
+	gm='git merge' \
+	gl='git pull' \
+	ggl='git pull origin $(git branch --show-current)' \
+	gp='git push -u' \
+	ggp='git push -u origin $(git branch --show-current)'
 
 # Basic auto/tab complete:
 autoload -U compinit
@@ -62,9 +102,11 @@ ffzf () {
 }
 bindkey -s '^o' 'ffzf\n'
 
-bindkey -s '^a' 'bc -lq\n'
-
 bindkey -s '^r' 'source ~/.zshrc\n'
+
+bindkey -s '^s' 'tmux\n'
+
+bindkey -s '^v' 'vi\n'
 
 bindkey '^[[P' delete-char
 
